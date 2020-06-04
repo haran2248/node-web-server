@@ -4,6 +4,7 @@ const hbs=require('hbs')
 const app=express()
 const geo=require('./utils/geocode')
 const fore=require('./utils/forecast')
+const port=process.env.PORT||3000
 const publicDirectoryPath=path.join(__dirname,'../public')
 app.set('views', path.join(__dirname, '../templates/views'))
 const partialsPath=path.join(__dirname,'../templates/partials')
@@ -91,6 +92,6 @@ app.get('*',(req,res)=>{
 })
 
 
-app.listen(3000,()=>{
-    console.log('server running')
+app.listen(port,()=>{
+    console.log('server running on '+port)
 })
