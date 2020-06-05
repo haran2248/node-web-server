@@ -15,11 +15,11 @@ request({url,json:true},(error,{body})=>{
   
     else
     {
-    callback(undefined,{
-        weather:body.current.weather[0]
-    })
+    
+    callback(undefined,
+        body.current.weather[0].description+". Temperature out there is "+body.current.temp+" degrees.")
+    
     }
-}
-)
+})
 }
 module.exports=forecast

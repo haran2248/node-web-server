@@ -9,7 +9,7 @@ const weatherform=document.querySelector('form')
 const search=document.querySelector('input')
 const message1=document.querySelector('#message1')
 const message2=document.querySelector('#message2')
-
+const message3=document.querySelector('#message3')
 
 weatherform.addEventListener('submit',(e)=>{
     e.preventDefault()
@@ -22,9 +22,9 @@ weatherform.addEventListener('submit',(e)=>{
         }
         else
         {
-            console.log(data.forecast.weather.description)
+            console.log(data.forecast)
             console.log(data.location)
-            message1.textContent=data.forecast.weather.description
+            message1.textContent=data.forecast
             message2.textContent=data.location
         }
     })
